@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #bodybg{
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to right, red, yellow);
+            position: relative;
+        }
+        #centerdiv{
+            width: 100%;
+            position: absolute;
+            top: 30%;
+            font-family: Arial, Helvetica, sans-serif;
+            left: 50%;
+            transform:translate(-50%, -50%) ;
+            text-align: center;
+        }
+        h1{
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: rgba(0, 0, 0, .8);
+            text-transform: uppercase;
+            letter-spacing: .5em;
+
+        }
+        h2{
+            font-size: 1.5rem;
+            color: rgba(0, 0, 0, .8);
+            text-transform: uppercase;
+            letter-spacing: .5em;
+        }
+        h3{
+            font-size: 1.5rem;
+            color: rgba(0, 0, 0, .8);
+            text-transform: uppercase;
+            letter-spacing: .2em;
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+    <title>Gredient Generator</title>
+</head>
+<body id="bodybg">
+    <div id="centerdiv"> 
+        <h1>BACKGROUND COLOR GENERATOR</h1>
+        <br><br>
+        <h2>PICK THE COLOR</h2>
+        <br><br>
+        <input type="color" name="" id="colorone" value="#657A99">
+        <input type="color" name="" id="colortwo" value="#95c42B">
+        <br><br> 
+        <h3 id="showvalue"></h3>
+    </div>
+    <script>
+        const colorone = document.getElementById('colorone');
+        const colortwo = document.getElementById('colortwo');
+        const bodybg = document.getElementById('bodybg');
+        const show = document.getElementById('showvalue');
+        
+        function setbgColor(){
+            bodybg.style.background = `linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+                show.textContent = `linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+            
+        }
+        colorone.addEventListener('input', setbgColor);
+        colortwo.addEventListener('input', setbgColor);
+
+        // colorone.addEventListener('input', function(){
+        //     // console.log(colorone);
+        //         bodybg.style.background = `linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+        //         show.textContent = `linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+        //     });
+        // colortwo.addEventListener('input', function(){
+        //     // console.log(colorone);
+        //         bodybg.style.background = `linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+        //         show.textContent = `linear-gradient(to right, ${colorone.value}, ${colortwo.value})`;
+            
+        //     });
+        
+    
+    </script>
+</body>
+</html>
